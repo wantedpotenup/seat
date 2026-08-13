@@ -12,13 +12,13 @@ export function SeatCard({ seat, onSelect, readOnly = false }: SeatCardProps) {
   if (taken) {
     return (
       <div
-        className="flex aspect-square flex-col items-center justify-center rounded-xl border-2 border-sky-100 bg-sky-50 p-1 text-center shadow-inner"
+        className="flex aspect-square min-w-0 flex-col items-center justify-center gap-0.5 rounded-xl border-2 border-sky-100 bg-sky-50 p-1 text-center shadow-inner"
         aria-label={`${seat.number}번, ${seat.name} 선택 완료`}
       >
-        <span className="text-lg font-bold text-slate-400 sm:text-2xl md:text-3xl">
+        <span className="text-base font-bold leading-none text-slate-400 sm:text-2xl md:text-3xl">
           {seat.number}
         </span>
-        <span className="mt-1 w-full truncate px-1 text-sm font-semibold text-blue-700 sm:text-lg md:text-xl">
+        <span className="w-full break-words px-1 text-xs font-semibold leading-tight text-blue-700 sm:text-lg md:text-xl">
           {seat.name}
         </span>
       </div>

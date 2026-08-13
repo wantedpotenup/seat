@@ -29,13 +29,13 @@ function Cell({ cell, seats }: { cell: LayoutCell; seats: Seat[] }) {
   if (name) {
     return (
       <div
-        className="flex aspect-square flex-col items-center justify-center rounded-lg border-2 border-sky-100 bg-sky-50 p-1 text-center"
+        className="flex aspect-square min-w-0 flex-col items-center justify-center gap-0.5 rounded-lg border-2 border-sky-100 bg-sky-50 p-0.5 text-center sm:p-1"
         aria-label={`${cell.number}번, ${name}`}
       >
-        <span className="text-sm font-bold text-slate-400 sm:text-base md:text-lg">
+        <span className="text-[10px] font-bold leading-none text-slate-400 sm:text-sm md:text-lg">
           {cell.number}
         </span>
-        <span className="mt-0.5 w-full truncate px-1 text-xs font-semibold text-blue-700 sm:text-sm md:text-base">
+        <span className="w-full break-words px-0.5 text-[11px] font-semibold leading-[1.1] text-blue-700 sm:text-sm md:text-base">
           {name}
         </span>
       </div>
@@ -65,13 +65,13 @@ export function SeatLayoutGrid({ data, seats }: SeatLayoutGridProps) {
 
       <div className="overflow-x-auto">
         <div
-          className="flex flex-col gap-2"
-          style={{ minWidth: maxCols * 56 }}
+          className="flex flex-col gap-1.5 sm:gap-2"
+          style={{ minWidth: maxCols * 68 }}
         >
           {data.rows.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="grid gap-2"
+              className="grid gap-1.5 sm:gap-2"
               style={{ gridTemplateColumns: `repeat(${maxCols}, minmax(0, 1fr))` }}
             >
               {row.map((cell, cellIndex) => (
